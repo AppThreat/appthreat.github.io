@@ -1,41 +1,26 @@
 ---
 layout: page
-title: Application security with evidence
+title: Every finding proven. Every dependency audited.
 ---
 
-We build open-source security tools and help teams use them well. A security answer should carry its evidence with it: what a release contains, which weaknesses are real, and what is actually reachable in your code.
+Everything we build serves two tools. [chennai](https://github.com/AppThreat/chennai) proves what your code and binaries actually do. [dep-scan](https://github.com/owasp-dep-scan/dep-scan) audits what your software is built from. The rest of our projects are toolkits for these two.
 
-## Projects
+## chennai
 
-### [chen](https://github.com/AppThreat/chen)
+The orchestrator for code and binary analysis. Point it at a repository or an executable and explore methods, calls, and data flows from the terminal. Its optional AI agent must prove every finding with a real data-flow path before reporting it, and it runs fully offline.
 
-A code analysis library that turns a program into one queryable graph of syntax, control flow, and data movement, so "can untrusted input reach this call" becomes a question with a provable answer.
+- [atom](https://github.com/AppThreat/atom) turns Java, Python, JavaScript, TypeScript, PHP, Ruby, Scala, or C/C++ code into a compact, queryable graph, built on the [chen](https://github.com/AppThreat/chen) analysis library.
+- [blint](https://github.com/owasp-dep-scan/blint) reads executables, WebAssembly, Android, and iOS apps without running them, aided by [multi-demangle](https://github.com/AppThreat/multi-demangle) for symbol recovery and [blint-db](https://github.com/AppThreat/blint-db) for identifying components in stripped binaries.
+- [dosai](https://github.com/owasp-dep-scan/dosai) brings the same evidence to .NET, from source, assemblies, or NuGet packages.
 
-### [atom](https://github.com/AppThreat/atom)
+## dep-scan
 
-Turns a Java, Python, JavaScript, TypeScript, PHP, Ruby, Scala, or C/C++ codebase into a compact, queryable file with call relationships and data flows. cdxgen uses it to prove which dependencies a program actually uses.
+The orchestrator for dependency risk. It inventories your project or container image, checks every component against known vulnerabilities and license conflicts, and ranks the results by risk, with no network access needed.
 
-### [chennai](https://github.com/AppThreat/chennai)
-
-A terminal application for exploring source and binaries, with an optional AI agent that must prove every finding with a real data-flow path before reporting it. Runs fully offline on your machine.
-
-## Toolchains
-
-### [cdxgen](https://github.com/cdxgen/cdxgen)
-
-A complete software transparency toolchain: inventories for applications, containers, and operating systems, CycloneDX bills for components and cryptography, VEX documents, and signed, attestable output. Extended by [cdxgen-plugins-bin](https://github.com/cdxgen/cdxgen-plugins-bin) with the golem, rusi, and kosi data-flow and reachability slicers, [caxa](https://github.com/cdxgen/caxa) standalone packaging, and [safer-exec](https://github.com/cdxgen/safer-exec) runtime tracing.
-
-### [blint](https://github.com/owasp-dep-scan/blint)
-
-Binary analysis for reverse engineers and security analysts: what an executable, APK, or IPA contains and can do, without running it. Helped by [multi-demangle](https://github.com/AppThreat/multi-demangle) for symbol recovery and [blint-db](https://github.com/AppThreat/blint-db) for identifying components in stripped binaries.
-
-### [dep-scan](https://github.com/owasp-dep-scan/dep-scan)
-
-Audits dependencies for vulnerabilities and license conflicts and ranks them by risk, powered by the offline [vulnerability-db](https://github.com/AppThreat/vulnerability-db).
-
-### [dosai](https://github.com/owasp-dep-scan/dosai)
-
-Code-level evidence for .NET: methods, call graphs, taint analysis, crypto inventory, and API endpoints from source, assemblies, or NuGet packages.
+- [cdxgen](https://github.com/cdxgen/cdxgen) is the software transparency toolchain behind the inventory: bills of materials for applications, containers, and operating systems, crypto bills, VEX documents, and signed, attestable output.
+- [cdxgen-plugins-bin](https://github.com/cdxgen/cdxgen-plugins-bin) extends it with the golem, rusi, and kosi data-flow and reachability slicers for Go, Rust, and Kotlin.
+- [caxa](https://github.com/cdxgen/caxa) packages everything into standalone executables, and [safer-exec](https://github.com/cdxgen/safer-exec) turns observed runtime behavior into a bill of materials.
+- [vulnerability-db](https://github.com/AppThreat/vulnerability-db) merges NVD, OSV, GitHub, and Linux distribution advisories into one offline, open-format database.
 
 ## Services
 

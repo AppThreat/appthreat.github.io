@@ -1,6 +1,6 @@
 # Site settings
 title: AppThreat
-description: "Open-source application security tools and consulting"
+description: "chennai for code and binary analysis, dep-scan for dependency risk, and the open-source toolkits behind them"
 url: "https://www.appthreat.com"
 repo: "https://github.com/AppThreat"
 email: "hello@appthreat.com"
@@ -34,10 +34,10 @@ exclude:
 
 # Navigation
 navigation_header:
-- title: Projects
-  url: /#projects
-- title: Toolchains
-  url: /#toolchains
+- title: chennai
+  url: /#chennai
+- title: dep-scan
+  url: /#dep-scan
 - title: Services
   url: /#services
 - title: Contact
