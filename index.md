@@ -3,24 +3,24 @@ layout: page
 title: Proof, not noise
 ---
 
-Everything we build serves two tools. [chennai](https://github.com/AppThreat/chennai) proves what your code and binaries actually do. [dep-scan](https://github.com/owasp-dep-scan/dep-scan) audits what your software is built from. The rest of our projects are toolkits for these two.
+Most security findings never matter in your code. We build two orchestrators that find the ones that do: [chennai](https://github.com/AppThreat/chennai) proves which risks are real in your code and binaries, and [dep-scan](https://github.com/owasp-dep-scan/dep-scan) shows what your dependencies expose you to and what to fix first.
 
 ## chennai
 
-The orchestrator for code and binary analysis. Point it at a repository or an executable and explore methods, calls, and data flows from the terminal. Its optional AI agent must prove every finding with a real data-flow path before reporting it, and it runs fully offline.
+Trace untrusted input from where it enters to where it is used, across your code and your dependencies, and get findings backed by paths you can check yourself. An optional AI agent does the legwork, and every claim it makes must survive the same proof. Runs offline, on your machine.
 
-- [atom](https://github.com/AppThreat/atom) turns Java, Python, JavaScript, TypeScript, PHP, Ruby, Scala, or C/C++ code into a compact, queryable graph, built on the [chen](https://github.com/AppThreat/chen) analysis library.
-- [blint](https://github.com/owasp-dep-scan/blint) reads executables, WebAssembly, Android, and iOS apps without running them, aided by [multi-demangle](https://github.com/AppThreat/multi-demangle) for symbol recovery and [blint-db](https://github.com/AppThreat/blint-db) for identifying components in stripped binaries.
-- [dosai](https://github.com/owasp-dep-scan/dosai) brings the same evidence to .NET, from source, assemblies, or NuGet packages.
+- [atom](https://github.com/AppThreat/atom) turns a whole codebase into a queryable map of calls and data flows, so "is this weakness reachable" gets an answer instead of a guess. Built on the [chen](https://github.com/AppThreat/chen) analysis library.
+- [blint](https://github.com/owasp-dep-scan/blint) tells you what a shipped executable, Android, or iOS app contains and can do, without ever running it. [multi-demangle](https://github.com/AppThreat/multi-demangle) restores readable symbol names, and [blint-db](https://github.com/AppThreat/blint-db) recognizes components inside stripped binaries.
+- [dosai](https://github.com/owasp-dep-scan/dosai) delivers the same evidence for .NET, whether you have the source or only the assemblies.
 
 ## dep-scan
 
-The orchestrator for dependency risk. It inventories your project or container image, checks every component against known vulnerabilities and license conflicts, and ranks the results by risk, with no network access needed.
+Point it at a project or a container image and get a ranked risk report: every component inventoried, every known vulnerability and license conflict surfaced, and a clear order for what to upgrade first. Runs offline against your own copy of the data.
 
 - [cdxgen](https://github.com/cdxgen/cdxgen) is the software transparency toolchain behind the inventory: bills of materials for applications, containers, and operating systems, crypto bills, VEX documents, and signed, attestable output.
-- [cdxgen-plugins-bin](https://github.com/cdxgen/cdxgen-plugins-bin) extends it with the golem, rusi, and kosi data-flow and reachability slicers for Go, Rust, and Kotlin.
+- [cdxgen-plugins-bin](https://github.com/cdxgen/cdxgen-plugins-bin) adds the golem, rusi, and kosi slicers, which show which parts of a dependency your program actually exercises.
 - [caxa](https://github.com/cdxgen/caxa) packages everything into standalone executables, and [safer-exec](https://github.com/cdxgen/safer-exec) turns observed runtime behavior into a bill of materials.
-- [vulnerability-db](https://github.com/AppThreat/vulnerability-db) merges NVD, OSV, GitHub, and Linux distribution advisories into one offline, open-format database.
+- [vulnerability-db](https://github.com/AppThreat/vulnerability-db) merges every advisory from NVD, OSV, GitHub, and the Linux distributions into one offline database you own.
 
 ## Services
 
