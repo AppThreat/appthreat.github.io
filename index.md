@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Security, not smoke
+title: Open Security Intelligence
 ---
 
 Most security findings never matter in your code. We build two orchestrators that find the ones that do: [chennai](https://github.com/AppThreat/chennai) proves which risks are real in your code and binaries, and [dep-scan](https://github.com/owasp-dep-scan/dep-scan) shows what your dependencies expose you to and what to fix first.
