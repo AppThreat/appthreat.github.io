@@ -1,0 +1,30 @@
+---
+title: false
+styles: true
+---
+
+// AppThreat overrides, applied before the Alembic theme import.
+// Brand orange is #ff753d; link colours are darkened for contrast on white.
+
+$accentColour: #ff753d;
+$linkColour: #c2410c;
+$hoverColour: #9a3412;
+$headingColour: #202a30;
+$bodyColour: #3d4a52;
+
+$bodytype: (
+  font-family: "Inter, sans-serif",
+  regular: 400,
+  bold: 700,
+  italic: italic,
+  cap-height: 0.66
+);
+
+$headingtype: (
+  font-family: "Inter, sans-serif",
+  regular: 600,
+  bold: 700,
+  cap-height: 0.66
+);
+
+@import "alembic";

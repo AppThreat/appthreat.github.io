@@ -1,5 +1,69 @@
-remote_theme: pages-themes/hacker@v0.2.0
-plugins:
-- jekyll-remote-theme 
+# Site settings
 title: AppThreat
-description: Team AppThreat
+description: "Open-source application security tools and consulting"
+url: "https://www.appthreat.com"
+repo: "https://github.com/AppThreat"
+email: "hello@appthreat.com"
+logo: "/assets/emblem.png"
+lang: en-US
+encoding: utf-8
+permalink: pretty
+# Link /assets/styles.css instead of inlining, so the Sass overrides in
+# assets/styles.scss (fonts, colours) are the single source of truth
+css_inline: false
+
+# Theme
+remote_theme: daviddarnes/alembic@main
+sass:
+  style: compressed
+
+plugins:
+- jekyll-remote-theme
+- jekyll-sitemap
+- jekyll-seo-tag
+- jekyll-feed
+- jekyll-include-cache
+
+exclude:
+- README.md
+- LICENSE
+- CNAME
+- Gemfile
+- Gemfile.lock
+- .jekyll-cache
+
+# Navigation
+navigation_header:
+- title: Projects
+  url: /#projects
+- title: Toolchains
+  url: /#toolchains
+- title: Services
+  url: /#services
+- title: Contact
+  url: /#contact
+- title: GitHub
+  url: https://github.com/AppThreat
+
+navigation_footer:
+- title: AppThreat
+  url: https://www.appthreat.com
+
+social_links:
+  GitHub: https://github.com/AppThreat
+  RSS: /feed.xml
+
+# Load custom fonts from fonts.google.com
+fonts:
+  preconnect_urls:
+    - https://fonts.gstatic.com
+  font_urls:
+    - https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap
+
+# Favicons, generated from the AppThreat emblem
+favicons:
+  16: '/assets/favicon-16.png'
+  32: '/assets/favicon-32.png'
+  96: '/assets/favicon-96.png'
+  180: '/assets/favicon-180.png'
+  512: '/assets/favicon-512.png'
