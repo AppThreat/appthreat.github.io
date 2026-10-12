@@ -19,7 +19,7 @@ Point it at a project or a container image and get a ranked risk report: every c
 
 - [cdxgen](https://github.com/cdxgen/cdxgen) is the software transparency toolchain behind the inventory: bills of materials for applications, containers, and operating systems, crypto bills, VEX documents, and signed, attestable output.
 - [cdxgen-plugins-bin](https://github.com/cdxgen/cdxgen-plugins-bin) adds the golem, rusi, and kosi slicers, which show which parts of a dependency your program actually exercises.
-- [caxa](https://github.com/cdxgen/caxa) packages everything into standalone executables, and [safer-exec](https://github.com/cdxgen/safer-exec) turns observed runtime behavior into a bill of materials.
+- [caxa](https://github.com/cdxgen/caxa) packages everything into standalone executables, and [safer-exec](https://github.com/cdxgen/safer-exec) is our upcoming sandbox for safely running untrusted commands and seeing exactly what they open, load, and talk to.
 - [vulnerability-db](https://github.com/AppThreat/vulnerability-db) merges every advisory from NVD, OSV, GitHub, and the Linux distributions into one offline database you own.
 
 ## Services
