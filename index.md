@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Proof, not noise
+title: Security, not smoke
 ---
 
 Most security findings never matter in your code. We build two orchestrators that find the ones that do: [chennai](https://github.com/AppThreat/chennai) proves which risks are real in your code and binaries, and [dep-scan](https://github.com/owasp-dep-scan/dep-scan) shows what your dependencies expose you to and what to fix first.
@@ -15,19 +15,16 @@ Trace untrusted input from where it enters to where it is used, across your code
 
 ## dep-scan
 
-Point it at a project or a container image and get a ranked risk report: every component inventoried, every known vulnerability and license conflict surfaced, and a clear order for what to upgrade first. Runs offline against your own copy of the data.
+Point it at a project or a container image and get a ranked risk report: every component inventoried, every known vulnerability and license conflict surfaced, and a clear order for what to upgrade first. It also writes the paperwork auditors ask for, VDR and CSAF VEX documents, so the same scan feeds both the fix list and the EU Cyber Resilience Act file. Runs offline against your own copy of the data.
 
-- [cdxgen](https://github.com/cdxgen/cdxgen) is the software transparency toolchain behind the inventory: bills of materials for applications, containers, and operating systems, crypto bills, VEX documents, and signed, attestable output.
+- [cdxgen](https://github.com/cdxgen/cdxgen) is the software transparency toolchain behind the inventory: bills of materials for applications, containers, and operating systems, crypto bills, and signed, attestable output. It inventories AI systems as AI-BOMs covering models, prompts, and MCP tools, publishes and fetches BOMs over the Transparency Exchange protocol, and validates a BOM against CRA requirements.
 - [cdxgen-plugins-bin](https://github.com/cdxgen/cdxgen-plugins-bin) adds the golem, rusi, and kosi slicers, which show which parts of a dependency your program actually exercises.
 - [caxa](https://github.com/cdxgen/caxa) packages everything into standalone executables, and [safer-exec](https://github.com/cdxgen/safer-exec) is our upcoming sandbox for safely running untrusted commands and seeing exactly what they open, load, and talk to.
 - [vulnerability-db](https://github.com/AppThreat/vulnerability-db) merges every advisory from NVD, OSV, GitHub, and the Linux distributions into one offline database you own.
 
 ## Services
 
-- Custom security tool development
-- Architecture reviews and security assessments
-- Product security risk assessments
-- Training in code analysis and secure coding
+Beyond the tools, we take on custom security tool development, architecture reviews and security assessments, product security risk work, and hands-on training in code analysis and secure coding.
 
 ## Contact
 
