@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Every finding proven. Every dependency audited.
+title: Proof, not noise
 ---
 
 Everything we build serves two tools. [chennai](https://github.com/AppThreat/chennai) proves what your code and binaries actually do. [dep-scan](https://github.com/owasp-dep-scan/dep-scan) audits what your software is built from. The rest of our projects are toolkits for these two.
